@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import type {PropsWithChildren} from 'react';
-import {SafeAreaView,ScrollView,StatusBar,StyleSheet,Text,useColorScheme,View,} from 'react-native';
+import {View, Text, StyleSheet} from 'react-native';
 import params from './src/params';
+import Field from './src/components/Field';
 
 export default class App extends Component {
   render(){
@@ -11,6 +11,16 @@ export default class App extends Component {
         <Text style={styles.Description}>Tamanho da grade:
           {params.getRowsAmount()}x{params.getColumnsAmount()}
         </Text>
+        <Field/>
+        <Field opened/>
+        <Field opened nearMines={1} />
+        <Field opened nearMines={3} />
+        <Field opened nearMines={8} />
+        <Field opened nearMines={2} />
+        <Field mined />
+        <Field mined opened />
+        <Field mined opened exploded />
+        <Field mined opened exploded />
       </View>
     );
   }
